@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportar Incidente</title>
+</head>
+
+<body>
+
+<header>
+  <img src="assets/img/img1.png" alt="Logo del sistema" style="width:160px;">
+  <h1>Sistema Help Desk</h1>
+  <p>Gestión de incidentes informáticos</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="reportar.html">Reportar incidente</a></li>
+    <li><a href="tickets.html">Tickets</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section>
+    <h2>Formulario de reporte</h2>
+
+    <form>
+
+      <p>
+        <label>Título del incidente:</label><br>
+        <input type="text" name="titulo" required>
+      </p>
+
+      <p>
+        <label>Categoría:</label><br>
+        <select name="categoria">
+          <option>Red</option>
+          <option>Hardware</option>
+          <option>Software</option>
+        </select>
+      </p>
+
+      <p>
+        <label>Prioridad:</label><br>
+        <input type="radio" name="prioridad" value="alta"> Alta
+        <input type="radio" name="prioridad" value="media"> Media
+        <input type="radio" name="prioridad" value="baja"> Baja
+      </p>
+
+      <p>
+        <label>Descripción:</label><br>
+        <textarea name="descripcion" rows="5" cols="40"></textarea>
+      </p>
+
+      <button type="submit">Enviar Ticket</button>
+
+    </form>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Help Desk</p>
+</footer>
+
+</body>
+</html>
