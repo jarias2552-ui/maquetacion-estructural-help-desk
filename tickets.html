@@ -1,64 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Tickets</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Listado de Tickets | Help Desk</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
 
-<header>
-  <img src="assets/img/img1.png" alt="Logo del sistema" style="width:160px;">
-  <h1>Sistema Help Desk</h1>
-  <p>Gestión de incidentes informáticos</p>
+<header class="header">
+
+<img src="assets/img/img1.png" alt="Logo del sistema" width="150">
+
+<h1>Sistema Help Desk</h1>
+
+<p>Gestión de incidentes informáticos</p>
+
 </header>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="reportar.html">Reportar incidente</a></li>
-    <li><a href="tickets.html">Tickets</a></li>
-  </ul>
+
+<ul>
+
+<li><a href="index.html">Inicio</a></li>
+
+<li><a href="reportar.html">Reportar Incidente</a></li>
+
+<li><a href="tickets.html">Tickets</a></li>
+
+</ul>
+
 </nav>
 
-<main>
+<main class="container">
 
-  <section>
-    <h2>Listado de incidentes</h2>
+<section class="component">
 
-    <table border="1">
-      <tr>
-        <th>ID</th>
-        <th>Título</th>
-        <th>Categoría</th>
-        <th>Prioridad</th>
-        <th>Estado</th>
-      </tr>
+<h2>Listado de Incidentes</h2>
 
-      <tr>
-        <td>001</td>
-        <td>No hay internet</td>
-        <td>Red</td>
-        <td>Alta</td>
-        <td>Abierto</td>
-      </tr>
+<p class="descripcion">
 
-      <tr>
-        <td>002</td>
-        <td>PC lenta</td>
-        <td>Hardware</td>
-        <td>Media</td>
-        <td>En proceso</td>
-      </tr>
-    </table>
+Visualice el estado actual de los incidentes registrados en el sistema.
 
-  </section>
+</p>
+
+<div class="table-responsive">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Título</th>
+
+<th>Categoría</th>
+
+<th>Prioridad</th>
+
+<th>Estado</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>001</td>
+
+<td>No hay internet</td>
+
+<td>Red</td>
+
+<td><span class="badge alta">Alta</span></td>
+
+<td>Abierto</td>
+
+</tr>
+
+<tr>
+
+<td>002</td>
+
+<td>PC lenta</td>
+
+<td>Hardware</td>
+
+<td><span class="badge media">Media</span></td>
+
+<td>En proceso</td>
+
+</tr>
+
+<tr>
+
+<td>003</td>
+
+<td>Error de impresión</td>
+
+<td>Hardware</td>
+
+<td><span class="badge baja">Baja</span></td>
+
+<td>Resuelto</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
 
 </main>
 
 <footer>
-  <p>© 2026 Help Desk</p>
+
+<p>
+
+© 2026 Help Desk - Sistema de Gestión de Incidentes
+
+</p>
+
 </footer>
 
 </body>
+
 </html>

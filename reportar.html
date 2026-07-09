@@ -1,70 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Reportar Incidente</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reportar Incidente | Help Desk</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
 
-<header>
-  <img src="assets/img/img1.png" alt="Logo del sistema" style="width:160px;">
-  <h1>Sistema Help Desk</h1>
-  <p>Gestión de incidentes informáticos</p>
+<header class="header">
+
+    <img src="assets/img/img1.png" alt="Logo del sistema" width="150">
+
+    <h1>Sistema Help Desk</h1>
+
+    <p>Gestión de incidentes informáticos</p>
+
 </header>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="reportar.html">Reportar incidente</a></li>
-    <li><a href="tickets.html">Tickets</a></li>
-  </ul>
+
+    <ul>
+
+        <li><a href="index.html">Inicio</a></li>
+
+        <li><a href="reportar.html">Reportar Incidente</a></li>
+
+        <li><a href="tickets.html">Tickets</a></li>
+
+    </ul>
+
 </nav>
 
-<main>
+<main class="container">
 
-  <section>
-    <h2>Formulario de reporte</h2>
+<section class="component">
 
-    <form>
+<h2>Formulario de Reporte</h2>
 
-      <p>
-        <label>Título del incidente:</label><br>
-        <input type="text" name="titulo" required>
-      </p>
+<p class="descripcion">
 
-      <p>
-        <label>Categoría:</label><br>
-        <select name="categoria">
-          <option>Red</option>
-          <option>Hardware</option>
-          <option>Software</option>
-        </select>
-      </p>
+Complete el siguiente formulario para registrar un nuevo incidente de soporte técnico.
 
-      <p>
-        <label>Prioridad:</label><br>
-        <input type="radio" name="prioridad" value="alta"> Alta
-        <input type="radio" name="prioridad" value="media"> Media
-        <input type="radio" name="prioridad" value="baja"> Baja
-      </p>
+</p>
 
-      <p>
-        <label>Descripción:</label><br>
-        <textarea name="descripcion" rows="5" cols="40"></textarea>
-      </p>
+<form>
 
-      <button type="submit">Enviar Ticket</button>
+<label for="titulo">Título del incidente</label>
 
-    </form>
+<input
+type="text"
+id="titulo"
+name="titulo"
+placeholder="Ingrese el título del incidente"
+required>
 
-  </section>
+<label for="categoria">Categoría</label>
+
+<select id="categoria" name="categoria">
+
+<option>Red</option>
+
+<option>Hardware</option>
+
+<option>Software</option>
+
+</select>
+
+<label>Prioridad</label>
+
+<div class="badges">
+
+<label>
+
+<input type="radio" name="prioridad">
+
+Alta
+
+</label>
+
+<label>
+
+<input type="radio" name="prioridad">
+
+Media
+
+</label>
+
+<label>
+
+<input type="radio" name="prioridad">
+
+Baja
+
+</label>
+
+</div>
+
+<label for="descripcion">
+
+Descripción
+
+</label>
+
+<textarea
+id="descripcion"
+rows="6"
+placeholder="Describa el problema presentado"></textarea>
+
+<br>
+
+<button class="btn btn-primary" type="submit">
+
+Enviar Ticket
+
+</button>
+
+</form>
+
+</section>
 
 </main>
 
 <footer>
-  <p>© 2026 Help Desk</p>
+
+<p>
+
+© 2026 Help Desk - Sistema de Gestión de Incidentes
+
+</p>
+
 </footer>
 
 </body>
+
 </html>

@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Help Desk - Inicio</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Help Desk</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
 
-<header>
-  <img src="assets/img/img1.png" alt="Logo del sistema" style="width:160px;">
-  <h1>Sistema Help Desk</h1>
-  <p>Gestión de incidentes informáticos</p>
+<header class="header">
+
+    <img src="assets/img/img1.png" alt="Logo del sistema" width="150">
+
+    <h1>Sistema Help Desk</h1>
+
+    <p>Gestión de incidentes informáticos</p>
+
 </header>
 
 <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="reportar.html">Reportar incidente</a></li>
-    <li><a href="tickets.html">Tickets</a></li>
-  </ul>
+
+    <ul>
+
+        <li><a href="index.html">Inicio</a></li>
+
+        <li><a href="reportar.html">Reportar Incidente</a></li>
+
+        <li><a href="tickets.html">Tickets</a></li>
+
+    </ul>
+
 </nav>
 
-<main>
+<main class="container">
 
-  <section>
-    <h2>Bienvenido</h2>
-    <p>Sistema para registrar y dar seguimiento a incidentes de soporte técnico.</p>
-  </section>
+    <section class="component">
 
-  <section>
-    <article>
-      <h3>Resumen</h3>
-      <p>Gestión de problemas de red, hardware y software.</p>
-    </article>
-  </section>
+        <h2>Bienvenido</h2>
+
+        <p class="descripcion">
+
+            Bienvenido al sistema Help Desk. Desde este panel podrás registrar,
+            consultar y dar seguimiento a los incidentes reportados por los usuarios.
+
+        </p>
+
+        <div class="dashboard">
+
+            <article class="card">
+
+                <h3>Incidentes</h3>
+
+                <p>Consulta el listado completo de tickets registrados en el sistema.</p>
+
+                <div class="card-footer">
+
+                    <a href="tickets.html" class="btn btn-primary">Ver Tickets</a>
+
+                </div>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Nuevo Reporte</h3>
+
+                <p>Registra un nuevo incidente indicando la categoría y prioridad.</p>
+
+                <div class="card-footer">
+
+                    <a href="reportar.html" class="btn btn-secondary">Reportar</a>
+
+                </div>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Estado del Sistema</h3>
+
+                <p>El sistema Help Desk se encuentra funcionando correctamente.</p>
+
+                <div class="card-footer">
+
+                    <span class="badge baja">Activo</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
 
 </main>
 
 <footer>
-  <p>© 2026 Help Desk</p>
+
+    <p>© 2026 Help Desk - Sistema de Gestión de Incidentes</p>
+
 </footer>
 
 </body>
+
 </html>
