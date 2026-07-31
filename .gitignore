@@ -1,0 +1,15 @@
+# Dependencias de Node.js
+node_modules/
+
+# Variables de entorno
+.env
+
+# Archivos de registro
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de Visual Studio Code
+.vscode/
