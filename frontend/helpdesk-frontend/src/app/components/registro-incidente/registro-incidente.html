@@ -1,0 +1,1395 @@
+<section class="incident-page">
+
+  <!-- =====================================================
+       FONDO TECNOLÓGICO
+  ====================================================== -->
+
+  <div class="tech-grid"></div>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+
+
+  <!-- =====================================================
+       LOADING
+  ====================================================== -->
+
+  <div class="loading-overlay" *ngIf="cargando">
+
+    <div class="loading-card">
+
+      <div class="loading-orbit">
+
+        <div class="loading-core">
+
+          <svg viewBox="0 0 64 64">
+            <path
+              d="M18 20h28a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4Z"
+            />
+
+            <path d="M22 16v8M42 16v8" />
+
+            <path d="M22 32h20M22 39h12" />
+          </svg>
+
+        </div>
+
+      </div>
+
+
+      <div class="loading-label">
+        HELP DESK CORE
+      </div>
+
+
+      <h2>
+        Registrando incidente
+      </h2>
+
+
+      <p>
+        Conectando con el sistema y almacenando
+        la información del ticket...
+      </p>
+
+
+      <div class="loading-progress">
+
+        <span></span>
+
+      </div>
+
+
+      <div class="loading-status">
+
+        <i></i>
+
+        Procesando solicitud
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       MENSAJE EXITOSO
+  ====================================================== -->
+
+  <div
+    class="notification success-notification"
+    *ngIf="mensaje"
+  >
+
+    <div class="notification-icon">
+
+      ✓
+
+    </div>
+
+
+    <div class="notification-content">
+
+      <small>
+        OPERACIÓN COMPLETADA
+      </small>
+
+      <strong>
+        Ticket registrado correctamente
+      </strong>
+
+      <span>
+        {{mensaje}}
+      </span>
+
+    </div>
+
+
+    <div class="notification-line"></div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       MENSAJE ERROR
+  ====================================================== -->
+
+  <div
+    class="notification error-notification"
+    *ngIf="error"
+  >
+
+    <div class="notification-icon">
+
+      !
+
+    </div>
+
+
+    <div class="notification-content">
+
+      <small>
+        ALERTA DEL SISTEMA
+      </small>
+
+      <strong>
+        No se pudo completar la operación
+      </strong>
+
+      <span>
+        {{error}}
+      </span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       CONTENEDOR
+  ====================================================== -->
+
+  <main class="incident-container">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="hero-header">
+
+
+      <div class="hero-left">
+
+
+        <!-- LOGO -->
+
+        <div class="system-logo">
+
+          <div class="logo-glow"></div>
+
+          <svg viewBox="0 0 80 80">
+
+            <rect
+              x="16"
+              y="19"
+              width="48"
+              height="42"
+              rx="10"
+            />
+
+            <path d="M25 31h30" />
+
+            <path d="M25 40h19" />
+
+            <path d="M25 49h13" />
+
+            <circle
+              cx="54"
+              cy="49"
+              r="4"
+            />
+
+          </svg>
+
+
+          <span class="logo-pulse"></span>
+
+        </div>
+
+
+
+        <!-- TITULO -->
+
+        <div class="hero-text">
+
+
+          <div class="eyebrow">
+
+            <span class="live-dot"></span>
+
+            CENTRO DE OPERACIONES
+
+            <span class="eyebrow-line"></span>
+
+            NUEVO INCIDENTE
+
+          </div>
+
+
+          <h1>
+
+            Registrar
+
+            <span>Incidente</span>
+
+          </h1>
+
+
+          <p>
+
+            Centraliza el reporte de problemas técnicos
+            y permite que el equipo de soporte actúe
+            rápidamente.
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ESTADO -->
+
+      <div class="hero-status">
+
+        <div class="status-ring">
+
+          <span></span>
+
+        </div>
+
+
+        <div>
+
+          <small>
+            SISTEMA
+          </small>
+
+          <strong>
+            OPERATIVO
+          </strong>
+
+        </div>
+
+
+        <div class="status-arrow">
+          →
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ===================================================
+         BARRA DE PROGRESO
+    ==================================================== -->
+
+    <section class="progress-card">
+
+
+      <div class="progress-top">
+
+        <div>
+
+          <span>
+            PROGRESO DEL REPORTE
+          </span>
+
+          <strong>
+            Preparación del incidente
+          </strong>
+
+        </div>
+
+
+        <div class="progress-number">
+
+          {{
+            ticket.titulo.trim() &&
+            ticket.descripcion.trim() &&
+            ticket.usuario.trim()
+            ? '100'
+            : (
+                ticket.titulo.trim() &&
+                ticket.descripcion.trim()
+                ? '75'
+                : (
+                    ticket.titulo.trim() ||
+                    ticket.descripcion.trim() ||
+                    ticket.usuario.trim()
+                    ? '45'
+                    : '20'
+                  )
+              )
+          }}%
+
+        </div>
+
+      </div>
+
+
+
+      <div class="progress-track">
+
+        <div
+          class="progress-fill"
+          [style.width.%]="
+            ticket.titulo.trim() &&
+            ticket.descripcion.trim() &&
+            ticket.usuario.trim()
+            ? 100
+            : (
+                ticket.titulo.trim() &&
+                ticket.descripcion.trim()
+                ? 75
+                : (
+                    ticket.titulo.trim() ||
+                    ticket.descripcion.trim() ||
+                    ticket.usuario.trim()
+                    ? 45
+                    : 20
+                  )
+              )
+          "
+        ></div>
+
+      </div>
+
+
+
+      <div class="progress-steps">
+
+        <div
+          class="progress-step"
+          [class.active]="ticket.titulo.trim()"
+        >
+
+          <span>01</span>
+
+          <div>
+            <small>PASO</small>
+            <strong>Problema</strong>
+          </div>
+
+        </div>
+
+
+        <div
+          class="progress-step"
+          [class.active]="ticket.descripcion.trim()"
+        >
+
+          <span>02</span>
+
+          <div>
+            <small>PASO</small>
+            <strong>Descripción</strong>
+          </div>
+
+        </div>
+
+
+        <div class="progress-step active">
+
+          <span>03</span>
+
+          <div>
+            <small>PASO</small>
+            <strong>Clasificación</strong>
+          </div>
+
+        </div>
+
+
+        <div
+          class="progress-step"
+          [class.active]="ticket.usuario.trim()"
+        >
+
+          <span>04</span>
+
+          <div>
+            <small>PASO</small>
+            <strong>Responsable</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONTENIDO
+    ==================================================== -->
+
+    <div class="main-layout">
+
+
+      <!-- =================================================
+           FORMULARIO
+      ================================================== -->
+
+      <section class="form-area">
+
+
+        <div class="section-heading">
+
+          <div class="heading-number">
+            01
+          </div>
+
+          <div>
+
+            <small>
+              INFORMACIÓN PRINCIPAL
+            </small>
+
+            <h2>
+              Describe el incidente
+            </h2>
+
+            <p>
+              Proporciona información clara para que
+              el equipo técnico pueda identificar el problema.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <form
+          #formIncidente="ngForm"
+          autocomplete="off"
+          novalidate
+          (ngSubmit)="crearTicket()"
+        >
+
+
+          <!-- =========================================
+               TITULO
+          ========================================== -->
+
+          <div class="field-card">
+
+            <div class="field-top">
+
+              <label for="titulo">
+
+                <span class="field-icon blue-icon">
+
+                  <svg viewBox="0 0 24 24">
+
+                    <path d="M5 4h14v16H5z" />
+
+                    <path d="M8 8h8M8 12h8M8 16h5" />
+
+                  </svg>
+
+                </span>
+
+                Título del problema
+
+                <b>*</b>
+
+              </label>
+
+
+              <span class="field-counter">
+
+                {{ticket.titulo.length}} / 100
+
+              </span>
+
+            </div>
+
+
+            <div class="input-shell">
+
+              <input
+                id="titulo"
+                type="text"
+                name="titulo"
+                required
+                minlength="3"
+                maxlength="100"
+                [(ngModel)]="ticket.titulo"
+                [disabled]="cargando"
+                placeholder="Ejemplo: Fallo de conexión al servidor"
+              />
+
+              <div class="input-focus"></div>
+
+            </div>
+
+
+            <div class="field-help">
+
+              <span>✦</span>
+
+              Escribe un título breve y fácil de identificar.
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =========================================
+               DESCRIPCION
+          ========================================== -->
+
+          <div class="field-card description-card">
+
+            <div class="field-top">
+
+              <label for="descripcion">
+
+                <span class="field-icon purple-icon">
+
+                  <svg viewBox="0 0 24 24">
+
+                    <path d="M5 4h14v16H5z" />
+
+                    <path d="M8 8h8M8 12h8M8 16h6" />
+
+                  </svg>
+
+                </span>
+
+                Descripción detallada
+
+                <b>*</b>
+
+              </label>
+
+
+              <span class="field-counter">
+
+                {{ticket.descripcion.length}} / 1000
+
+              </span>
+
+            </div>
+
+
+            <div class="textarea-shell">
+
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                required
+                minlength="5"
+                maxlength="1000"
+                [(ngModel)]="ticket.descripcion"
+                [disabled]="cargando"
+                placeholder="Describe qué ocurrió, cuándo ocurrió y qué sistema o equipo está afectado..."
+              ></textarea>
+
+            </div>
+
+
+            <div class="textarea-footer">
+
+              <span>
+
+                💡 Proporciona información clara para
+                agilizar la atención.
+
+              </span>
+
+              <strong>
+                {{ticket.descripcion.length}} / 1000
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =========================================
+               CLASIFICACION
+          ========================================== -->
+
+          <div class="classification-heading">
+
+            <span></span>
+
+            <div>
+
+              <small>
+                CLASIFICACIÓN DEL INCIDENTE
+              </small>
+
+            </div>
+
+            <span></span>
+
+          </div>
+
+
+
+          <div class="classification-grid">
+
+
+            <!-- CATEGORIA -->
+
+            <div class="field-card compact-field">
+
+              <label for="categoria">
+
+                <span class="field-icon orange-icon">
+
+                  <svg viewBox="0 0 24 24">
+
+                    <path d="M3 6h7l2 2h9v11H3z" />
+
+                  </svg>
+
+                </span>
+
+                Categoría
+
+              </label>
+
+
+              <div class="select-shell">
+
+                <select
+                  id="categoria"
+                  name="categoria"
+                  [(ngModel)]="ticket.categoria"
+                  [disabled]="cargando"
+                >
+
+                  <option
+                    *ngFor="let categoria of categorias"
+                    [value]="categoria"
+                  >
+
+                    {{categoria}}
+
+                  </option>
+
+                </select>
+
+
+                <span class="select-arrow">
+                 ⌄
+                </span>
+
+              </div>
+
+
+              <div class="field-help">
+                Selecciona el tipo de problema.
+              </div>
+
+            </div>
+
+
+
+            <!-- PRIORIDAD -->
+
+            <div class="field-card compact-field">
+
+              <label for="prioridad">
+
+                <span class="field-icon red-icon">
+
+                  <svg viewBox="0 0 24 24">
+
+                    <path d="M12 3v18" />
+
+                    <path d="M6 7h12l-3 5 3 5H6l3-5z" />
+
+                  </svg>
+
+                </span>
+
+                Prioridad
+
+              </label>
+
+
+              <div class="select-shell">
+
+                <select
+                  id="prioridad"
+                  name="prioridad"
+                  [(ngModel)]="ticket.prioridad"
+                  [disabled]="cargando"
+                >
+
+                  <option
+                    *ngFor="let prioridad of prioridades"
+                    [value]="prioridad"
+                  >
+
+                    {{prioridad}}
+
+                  </option>
+
+                </select>
+
+
+                <span class="select-arrow">
+                 ⌄
+                </span>
+
+              </div>
+
+
+              <div class="field-help">
+                Define el nivel de atención requerido.
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =========================================
+               USUARIO
+          ========================================== -->
+
+          <div class="field-card">
+
+            <div class="field-top">
+
+              <label for="usuario">
+
+                <span class="field-icon green-icon">
+
+                  <svg viewBox="0 0 24 24">
+
+                    <circle cx="12" cy="8" r="4" />
+
+                    <path d="M4 21c0-4 3-7 8-7s8 3 8 7" />
+
+                  </svg>
+
+                </span>
+
+                Usuario responsable
+
+                <b>*</b>
+
+              </label>
+
+            </div>
+
+
+            <div class="input-shell user-input">
+
+              <input
+                id="usuario"
+                type="text"
+                name="usuario"
+                required
+                [(ngModel)]="ticket.usuario"
+                [disabled]="cargando"
+                placeholder="Ingrese el nombre del responsable"
+              />
+
+              <span class="input-status">
+
+                <i></i>
+
+              </span>
+
+            </div>
+
+
+            <div class="field-help">
+
+              <span>◉</span>
+
+              Persona responsable del reporte o solicitud.
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =========================================
+               PREVISUALIZACION
+          ========================================== -->
+
+          <section class="preview-card">
+
+
+            <div class="preview-header">
+
+              <div>
+
+                <small>
+                  VISTA PREVIA DEL REPORTE
+                </small>
+
+                <h3>
+                  Resumen del incidente
+                </h3>
+
+              </div>
+
+
+              <div class="preview-status">
+
+                <i></i>
+
+                {{
+                  ticket.titulo &&
+                  ticket.descripcion &&
+                  ticket.usuario
+                  ? 'Información completa'
+                  : 'Esperando información'
+                }}
+
+              </div>
+
+            </div>
+
+
+
+            <div class="preview-body">
+
+
+              <div class="preview-symbol">
+
+                <svg viewBox="0 0 64 64">
+
+                  <rect
+                    x="13"
+                    y="17"
+                    width="38"
+                    height="32"
+                    rx="7"
+                  />
+
+                  <path d="M20 27h24M20 34h17M20 41h11" />
+
+                </svg>
+
+              </div>
+
+
+              <div class="preview-text">
+
+                <span>
+                  TÍTULO DEL INCIDENTE
+                </span>
+
+                <strong>
+
+                  {{
+                    ticket.titulo ||
+                    'El título aparecerá aquí'
+                  }}
+
+                </strong>
+
+
+                <p>
+
+                  {{
+                    ticket.descripcion ||
+                    'La descripción del incidente aparecerá aquí mientras completas el reporte.'
+                  }}
+
+                </p>
+
+              </div>
+
+
+              <div class="preview-priority">
+
+                <i></i>
+
+                {{ticket.prioridad}}
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- =========================================
+               BOTON
+          ========================================== -->
+
+          <button
+            class="submit-button"
+            type="submit"
+            [disabled]="cargando || formIncidente.invalid"
+          >
+
+
+            <span class="button-content" *ngIf="!cargando">
+
+              <span class="button-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                  <path d="M5 12h14" />
+
+                  <path d="m13 6 6 6-6 6" />
+
+                </svg>
+
+              </span>
+
+
+              <span>
+
+                Crear Ticket
+
+                <small>
+                  Registrar nuevo incidente
+                </small>
+
+              </span>
+
+            </span>
+
+
+
+            <span
+              class="button-loading"
+              *ngIf="cargando"
+            >
+
+              <span class="button-spinner"></span>
+
+              Guardando información...
+
+            </span>
+
+
+            <span
+              class="button-arrow"
+              *ngIf="!cargando"
+            >
+              →
+            </span>
+
+
+          </button>
+
+
+
+          <div class="security-note">
+
+            <span>🔒</span>
+
+            La información será procesada de forma segura
+            por el sistema Help Desk.
+
+          </div>
+
+
+        </form>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SIDEBAR
+      ================================================== -->
+
+      <aside class="system-panel">
+
+
+        <!-- CABECERA -->
+
+        <div class="panel-header">
+
+          <div>
+
+            <small>
+              MONITOR DEL SISTEMA
+            </small>
+
+            <h2>
+              Estado del reporte
+            </h2>
+
+          </div>
+
+
+          <span class="live-badge">
+
+            <i></i>
+
+            LIVE
+
+          </span>
+
+        </div>
+
+
+        <p class="panel-subtitle">
+
+          Información actual del incidente que
+          estás preparando.
+
+        </p>
+
+
+
+        <!-- =================================================
+             RADAR
+        ================================================== -->
+
+        <div class="radar-card">
+
+
+          <div class="radar-rings">
+
+            <div class="radar-ring ring-one"></div>
+
+            <div class="radar-ring ring-two"></div>
+
+            <div class="radar-ring ring-three"></div>
+
+
+            <div class="radar-core">
+
+              <svg viewBox="0 0 64 64">
+
+                <path d="M32 13v38M13 32h38" />
+
+                <circle
+                  cx="32"
+                  cy="32"
+                  r="6"
+                />
+
+              </svg>
+
+            </div>
+
+          </div>
+
+
+          <div class="radar-info">
+
+            <span>
+              CORE SYSTEM
+            </span>
+
+            <strong>
+              Help Desk
+            </strong>
+
+            <small>
+              Sistema operativo
+            </small>
+
+          </div>
+
+
+          <div class="radar-scan"></div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INDICADORES
+        ================================================== -->
+
+        <div class="monitor-section">
+
+          <div class="monitor-title">
+
+            <span>
+              INDICADORES
+            </span>
+
+            <i></i>
+
+          </div>
+
+
+
+          <!-- CATEGORIA -->
+
+          <div class="monitor-card">
+
+            <div class="monitor-icon blue-monitor">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="14"
+                  rx="3"
+                />
+
+                <path d="M7 9h10M7 13h6" />
+
+              </svg>
+
+            </div>
+
+
+            <div class="monitor-text">
+
+              <small>
+                CATEGORÍA
+              </small>
+
+              <strong>
+                {{ticket.categoria}}
+              </strong>
+
+            </div>
+
+
+            <span class="monitor-check">
+              ✓
+            </span>
+
+          </div>
+
+
+
+          <!-- PRIORIDAD -->
+
+          <div class="monitor-card">
+
+            <div class="monitor-icon yellow-monitor">
+
+              <svg viewBox="0 0 24 24">
+
+                <path d="M12 3v18" />
+
+                <path d="M6 7h12l-3 5 3 5H6l3-5z" />
+
+              </svg>
+
+            </div>
+
+
+            <div class="monitor-text">
+
+              <small>
+                PRIORIDAD
+              </small>
+
+              <strong>
+                {{ticket.prioridad}}
+              </strong>
+
+            </div>
+
+
+            <span class="monitor-check">
+              ✓
+            </span>
+
+          </div>
+
+
+
+          <!-- SERVIDOR -->
+
+          <div class="monitor-card">
+
+            <div class="monitor-icon green-monitor">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="4"
+                  y="4"
+                  width="16"
+                  height="16"
+                  rx="3"
+                />
+
+                <circle
+                  cx="8"
+                  cy="9"
+                  r="1"
+                />
+
+                <circle
+                  cx="8"
+                  cy="14"
+                  r="1"
+                />
+
+                <path d="M12 9h5M12 14h5" />
+
+              </svg>
+
+            </div>
+
+
+            <div class="monitor-text">
+
+              <small>
+                SERVIDOR
+              </small>
+
+              <strong>
+                Operativo
+              </strong>
+
+            </div>
+
+
+            <span class="monitor-check">
+              ✓
+            </span>
+
+          </div>
+
+
+
+          <!-- ESTADO -->
+
+          <div class="report-state">
+
+            <div class="state-icon">
+              ◌
+            </div>
+
+            <div>
+
+              <small>
+                ESTADO DEL REPORTE
+              </small>
+
+              <strong>
+
+                {{
+                  ticket.titulo &&
+                  ticket.descripcion &&
+                  ticket.usuario
+                  ? 'Listo para registrar'
+                  : 'Esperando información'
+                }}
+
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONSEJO
+        ================================================== -->
+
+        <div class="recommendation">
+
+          <div class="recommendation-icon">
+
+            ✦
+
+          </div>
+
+
+          <div>
+
+            <small>
+              RECOMENDACIÓN
+            </small>
+
+            <strong>
+              Sé específico
+            </strong>
+
+            <p>
+              Una descripción clara ayuda al equipo técnico
+              a resolver el incidente rápidamente.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER PANEL
+        ================================================== -->
+
+        <div class="panel-footer">
+
+          <span>
+
+            <i></i>
+
+            Servicios operativos
+
+          </span>
+
+          <strong>
+            v2.0
+          </strong>
+
+        </div>
+
+
+      </aside>
+
+    </div>
+
+
+
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
+
+    <footer class="system-footer">
+
+      <span>
+
+        HELP DESK
+
+      </span>
+
+
+      <div class="footer-line"></div>
+
+
+      <span>
+
+        INCIDENT MANAGEMENT SYSTEM
+
+      </span>
+
+
+      <div class="footer-status">
+
+        <i></i>
+
+        Conectado
+
+      </div>
+
+    </footer>
+
+
+  </main>
+
+</section>

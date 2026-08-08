@@ -1,0 +1,361 @@
+<header class="navbar">
+
+    <!-- =====================================================
+         FONDO TECNOLÓGICO
+    ====================================================== -->
+
+    <div class="tech-grid"></div>
+
+    <div class="energy-line"></div>
+
+
+    <!-- =====================================================
+         IDENTIDAD DEL SISTEMA
+    ====================================================== -->
+
+    <div class="logo-container">
+
+        <div class="logo-icon">
+
+            <div class="logo-ring"></div>
+
+            <span>🤖</span>
+
+        </div>
+
+
+        <div class="logo-text">
+
+            <h2>
+                <span class="help">Help</span><span class="desk">Desk</span>
+            </h2>
+
+            <div class="brand-line"></div>
+
+            <p>
+                Sistema de Gestión de Incidentes
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ESTADO DEL SISTEMA
+    ====================================================== -->
+
+    <div class="system-indicator">
+
+        <span class="online-dot"></span>
+
+        <span class="online-text">
+            SISTEMA ONLINE
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ACCIONES
+    ====================================================== -->
+
+    <div class="actions">
+
+
+        <!-- =================================================
+             NOTIFICACIONES
+        ================================================== -->
+
+        <div class="notification-box">
+
+
+            <button
+                class="notification"
+                (click)="mostrarNotificaciones()"
+                aria-label="Notificaciones"
+            >
+
+                <span class="bell">
+                    🔔
+                </span>
+
+
+                <span
+                    class="notification-glow"
+                    *ngIf="cantidadNotificaciones"
+                ></span>
+
+
+                <span
+                    class="counter"
+                    *ngIf="cantidadNotificaciones"
+                >
+                    {{cantidadNotificaciones}}
+                </span>
+
+            </button>
+
+
+
+            <!-- PANEL NOTIFICACIONES -->
+
+            <div
+                class="notifications"
+                *ngIf="menuNotificaciones"
+            >
+
+
+                <div class="notification-header">
+
+
+                    <div>
+
+                        <span class="notification-title">
+                            Centro de alertas
+                        </span>
+
+                        <small>
+                            Actividad reciente del sistema
+                        </small>
+
+                    </div>
+
+
+                    <span class="ia-tag">
+                        IA
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="notification-divider"></div>
+
+
+
+                <!-- AVISOS -->
+
+                <div
+                    class="notice"
+                    *ngFor="let aviso of notificaciones"
+                    [ngClass]="aviso.tipo"
+                >
+
+
+                    <div class="notice-icon">
+
+                        {{aviso.icon}}
+
+                    </div>
+
+
+                    <div class="notice-content">
+
+                        <strong>
+                            {{aviso.texto}}
+                        </strong>
+
+                        <small>
+                            {{aviso.tiempo}}
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SIN NOTIFICACIONES -->
+
+                <div
+                    class="empty-notification"
+                    *ngIf="notificaciones.length===0"
+                >
+
+                    <div class="empty-icon">
+                        📭
+                    </div>
+
+                    <strong>
+                        Todo está tranquilo
+                    </strong>
+
+                    <p>
+                        No existen alertas pendientes.
+                    </p>
+
+                </div>
+
+
+                <div class="notification-footer">
+
+                    <span>
+                        ● Monitoreo activo
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SEPARADOR
+        ================================================== -->
+
+        <div class="action-divider"></div>
+
+
+
+        <!-- =================================================
+             USUARIO
+        ================================================== -->
+
+        <div
+            class="user-area"
+            (click)="mostrarUsuario()"
+        >
+
+
+            <div class="avatar-container">
+
+                <div class="avatar-ring"></div>
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <span class="avatar-status"></span>
+
+            </div>
+
+
+
+            <div class="user-data">
+
+                <strong>
+                    Administrador
+                </strong>
+
+                <span>
+                    ● Sesión activa
+                </span>
+
+            </div>
+
+
+
+            <i class="arrow">
+               ⌄
+            </i>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MENÚ USUARIO
+        ================================================== -->
+
+        <div
+            class="dropdown"
+            *ngIf="menuUsuario"
+        >
+
+
+            <div class="dropdown-header">
+
+                <div class="mini-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Cuenta principal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="dropdown-divider"></div>
+
+
+
+            <button>
+
+                <span class="menu-icon">
+                    👤
+                </span>
+
+                <span>
+                    Perfil
+                </span>
+
+                <span class="menu-arrow">
+                    ›
+                </span>
+
+            </button>
+
+
+
+            <button>
+
+                <span class="menu-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Configuración
+                </span>
+
+                <span class="menu-arrow">
+                    ›
+                </span>
+
+            </button>
+
+
+
+            <div class="dropdown-divider"></div>
+
+
+
+            <button
+                class="logout-dropdown"
+                (click)="cerrarSesion()"
+            >
+
+                <span class="menu-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Cerrar sesión
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</header>

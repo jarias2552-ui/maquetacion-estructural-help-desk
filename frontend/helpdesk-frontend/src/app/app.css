@@ -1,0 +1,192 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+.app-layout{
+
+
+    display:flex;
+
+
+    min-height:
+
+    calc(100vh - 70px);
+
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #f8fafc,
+
+        #eef2ff
+
+    );
+
+
+}
+
+
+
+
+.main-content{
+
+
+    flex:1;
+
+
+    overflow-x:hidden;
+
+
+    position:relative;
+
+
+
+}
+
+
+
+
+.page-container{
+
+
+    padding:30px;
+
+
+    animation:
+
+    pageEntrada .45s ease;
+
+
+}
+
+
+
+
+
+@keyframes pageEntrada{
+
+
+from{
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(20px);
+
+
+}
+
+
+
+to{
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+/* Scroll elegante */
+
+
+::-webkit-scrollbar{
+
+
+    width:8px;
+
+
+}
+
+
+
+
+::-webkit-scrollbar-track{
+
+
+    background:#f1f5f9;
+
+
+}
+
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+    background:
+
+    linear-gradient(
+
+        #2563eb,
+
+        #38bdf8
+
+    );
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+::-webkit-scrollbar-thumb:hover{
+
+
+    background:#2563eb;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+
+.page-container{
+
+
+    padding:20px;
+
+
+}
+
+
+}

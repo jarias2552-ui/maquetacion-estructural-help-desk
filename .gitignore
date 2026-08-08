@@ -1,15 +1,35 @@
-# Dependencias de Node.js
+# =========================
+# Dependencias Node.js
+# =========================
+
 node_modules/
 
-# Variables de entorno
+
+# =========================
+# Variables privadas
+# =========================
+
 .env
 
-# Archivos de registro
-*.log
 
+# =========================
+# Archivos de logs
+# =========================
+
+*.log
+npm-debug.log*
+
+
+# =========================
 # Archivos del sistema
+# =========================
+
 .DS_Store
 Thumbs.db
 
-# Configuración de Visual Studio Code
+
+# =========================
+# Configuración VS Code
+# =========================
+
 .vscode/

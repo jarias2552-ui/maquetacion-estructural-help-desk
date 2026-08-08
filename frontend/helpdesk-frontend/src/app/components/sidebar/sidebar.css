@@ -1,0 +1,35 @@
+.sidebar {
+
+  width: 230px;
+  background: #1e293b;
+  min-height: 100%;
+
+  padding: 20px;
+}
+
+
+nav {
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+
+a {
+
+  color: white;
+  text-decoration: none;
+
+  padding: 12px;
+  border-radius: 8px;
+
+}
+
+
+a:hover {
+
+  background: #334155;
+
+}

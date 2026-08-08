@@ -1,38 +1,183 @@
 require("dotenv").config();
 
+
 const express = require("express");
-const mongoose = require("mongoose");
+
 const cors = require("cors");
+
+const helmet = require("helmet");
+
+
+const conectarDB = require("./config/database");
+
+
 const ticketRoutes = require("./routes/ticketRoutes");
+
+
+
 const app = express();
 
-// Verificar variables del archivo .env
-console.log("Puerto:", process.env.PORT);
-console.log("MongoDB:", process.env.MONGODB_URI);
 
-// Middleware
-app.use(cors());
-app.use(express.json());
 
-// Rutas de tickets
-app.use("/api/tickets", ticketRoutes);
 
-// Conexión a MongoDB
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("✅ Conectado a MongoDB"))
-  .catch((error) => console.error("❌ Error al conectar a MongoDB:", error));
 
-// Ruta de prueba
-app.get("/", (req, res) => {
-  res.json({
-    mensaje: "API Help Desk funcionando correctamente"
-  });
-});
+// =========================
+// SEGURIDAD
+// =========================
 
-// Puerto del servidor
-const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor ejecutándose en http://localhost:${PORT}`);
-});
+app.use(
+    helmet()
+);
+
+
+
+
+
+// =========================
+// CORS
+// =========================
+
+
+app.use(
+    cors({
+        origin:"*",
+        methods:[
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+        ]
+    })
+);
+
+
+
+
+
+// =========================
+// MIDDLEWARES
+// =========================
+
+
+app.use(
+    express.json()
+);
+
+
+
+
+
+// =========================
+// CONEXIÓN BD
+// =========================
+
+
+conectarDB();
+
+
+
+
+
+
+// =========================
+// RUTAS
+// =========================
+
+
+app.use(
+    "/api/tickets",
+    ticketRoutes
+);
+
+
+
+
+
+
+
+// =========================
+// RUTA PRUEBA
+// =========================
+
+
+app.get(
+    "/",
+    (req,res)=>{
+
+
+        res.json({
+
+            sistema:
+            "Help Desk API",
+
+            estado:
+            "Servidor funcionando correctamente",
+
+            version:
+            "1.0.0"
+
+        });
+
+
+    }
+);
+
+
+
+
+
+
+
+// =========================
+// MANEJO DE ERRORES
+// =========================
+
+
+app.use(
+    (error,req,res,next)=>{
+
+
+        console.error(error);
+
+
+
+        res.status(500).json({
+
+            mensaje:
+            "Error interno del servidor"
+
+        });
+
+
+    }
+);
+
+
+
+
+
+
+
+// =========================
+// SERVIDOR
+// =========================
+
+
+const PORT =
+process.env.PORT || 3000;
+
+
+
+app.listen(
+    PORT,
+    ()=>{
+
+
+        console.log(
+        `🚀 API ejecutándose en puerto ${PORT}`
+        );
+
+
+    }
+);

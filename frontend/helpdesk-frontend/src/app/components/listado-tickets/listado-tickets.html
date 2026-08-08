@@ -1,0 +1,1109 @@
+<section class="tickets-container">
+
+  <!-- =====================================================
+       FONDO TECNOLÓGICO ANIMADO
+  ====================================================== -->
+
+  <div class="tech-background">
+
+    <div class="background-grid"></div>
+
+    <div class="scan-line"></div>
+
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="background-orb orb-three"></div>
+
+    <div class="tech-particle particle-1"></div>
+    <div class="tech-particle particle-2"></div>
+    <div class="tech-particle particle-3"></div>
+    <div class="tech-particle particle-4"></div>
+    <div class="tech-particle particle-5"></div>
+    <div class="tech-particle particle-6"></div>
+
+  </div>
+
+
+  <!-- =====================================================
+       HEADER PRINCIPAL
+  ====================================================== -->
+
+  <header class="hero-header">
+
+    <div class="hero-left">
+
+      <!-- ICONO -->
+
+      <div class="hero-icon-wrapper">
+
+        <div class="hero-icon-ring ring-one"></div>
+        <div class="hero-icon-ring ring-two"></div>
+
+        <div class="hero-icon">
+
+          <span class="ticket-symbol">🎫</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEXTO -->
+
+      <div class="hero-content">
+
+        <div class="system-label">
+
+          <span class="status-pulse"></span>
+
+          CENTRO DE OPERACIONES
+
+          <span class="label-line"></span>
+
+          SISTEMA ACTIVO
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+          <span class="title-black">
+            GESTIÓN DE
+          </span>
+
+          <span class="title-tech">
+            TICKETS
+          </span>
+
+        </h1>
+
+
+        <div class="title-underline">
+
+          <span></span>
+
+        </div>
+
+
+        <p class="hero-description">
+
+          Control, seguimiento y resolución inteligente
+          de incidentes técnicos.
+
+        </p>
+
+
+        <div class="hero-features">
+
+          <span>
+            <i>✓</i>
+            Monitoreo
+          </span>
+
+          <span>
+            <i>✓</i>
+            Seguimiento
+          </span>
+
+          <span>
+            <i>✓</i>
+            Resolución
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TARJETA TOTAL
+    ================================================== -->
+
+    <div class="counter-card">
+
+      <div class="counter-light"></div>
+
+      <div class="counter-grid"></div>
+
+
+      <div class="counter-top">
+
+        <div class="counter-brand">
+
+          <div class="counter-icon">
+
+            <span>◈</span>
+
+          </div>
+
+          <div>
+
+            <span class="counter-kicker">
+              RESUMEN OPERATIVO
+            </span>
+
+            <strong>
+              Tickets
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="live-indicator">
+
+          <span></span>
+
+          ACTIVO
+
+        </div>
+
+      </div>
+
+
+      <div class="counter-main">
+
+        <div>
+
+          <small>
+            TOTAL REGISTRADOS
+          </small>
+
+          <strong class="counter-number">
+            {{ cantidadTickets }}
+          </strong>
+
+        </div>
+
+
+        <div class="counter-active">
+
+          <span>●</span>
+
+          {{ ticketsActivos }} activos
+
+        </div>
+
+      </div>
+
+
+      <div class="counter-footer">
+
+        <span>
+          Incidentes registrados
+        </span>
+
+        <span class="counter-arrow">
+          ↗
+        </span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       PANEL DE ESTADÍSTICAS
+  ====================================================== -->
+
+  <section class="stats-section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="section-kicker">
+          MONITOREO EN TIEMPO REAL
+        </span>
+
+        <h2>
+          Estado del sistema
+        </h2>
+
+      </div>
+
+      <div class="section-status">
+
+        <span></span>
+
+        DATOS EN VIVO
+
+      </div>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+
+      <!-- ABIERTOS -->
+
+      <article class="stat-card open-card">
+
+        <div class="card-glow"></div>
+
+        <div class="stat-card-top">
+
+          <span class="stat-caption">
+            ATENCIÓN REQUERIDA
+          </span>
+
+          <span class="stat-mini-icon open">
+            !
+          </span>
+
+        </div>
+
+
+        <div class="stat-main">
+
+          <div class="stat-icon open">
+
+            <span>◉</span>
+
+          </div>
+
+
+          <div class="stat-content">
+
+            <span>
+              Tickets abiertos
+            </span>
+
+            <strong>
+              {{ abiertos }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat-bottom">
+
+          <span>
+            Requieren atención inmediata
+          </span>
+
+          <span class="stat-arrow">
+            →
+          </span>
+
+        </div>
+
+
+        <div class="stat-line open-line"></div>
+
+      </article>
+
+
+
+      <!-- EN PROCESO -->
+
+      <article class="stat-card process-card">
+
+        <div class="card-glow"></div>
+
+        <div class="stat-card-top">
+
+          <span class="stat-caption">
+            ATENCIÓN TÉCNICA
+          </span>
+
+          <span class="stat-mini-icon process">
+            ↻
+          </span>
+
+        </div>
+
+
+        <div class="stat-main">
+
+          <div class="stat-icon process">
+
+            <span>◌</span>
+
+          </div>
+
+
+          <div class="stat-content">
+
+            <span>
+              En proceso
+            </span>
+
+            <strong>
+              {{ enProceso }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat-bottom">
+
+          <span>
+            Incidentes en revisión
+          </span>
+
+          <span class="stat-arrow">
+            →
+          </span>
+
+        </div>
+
+
+        <div class="stat-line process-line"></div>
+
+      </article>
+
+
+
+      <!-- CERRADOS -->
+
+      <article class="stat-card closed-card">
+
+        <div class="card-glow"></div>
+
+        <div class="stat-card-top">
+
+          <span class="stat-caption">
+            INCIDENTES RESUELTOS
+          </span>
+
+          <span class="stat-mini-icon closed">
+            ✓
+          </span>
+
+        </div>
+
+
+        <div class="stat-main">
+
+          <div class="stat-icon closed">
+
+            <span>✓</span>
+
+          </div>
+
+
+          <div class="stat-content">
+
+            <span>
+              Tickets cerrados
+            </span>
+
+            <strong>
+              {{ cerrados }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat-bottom">
+
+          <span>
+            Casos solucionados
+          </span>
+
+          <span class="stat-arrow">
+            →
+          </span>
+
+        </div>
+
+
+        <div class="stat-line closed-line"></div>
+
+      </article>
+
+
+
+      <!-- RESOLUCIÓN -->
+
+      <article class="stat-card resolution-card">
+
+        <div class="card-glow"></div>
+
+        <div class="stat-card-top">
+
+          <span class="stat-caption">
+            EFICIENCIA DEL SISTEMA
+          </span>
+
+          <span class="stat-mini-icon resolution">
+            %
+          </span>
+
+        </div>
+
+
+        <div class="resolution-main">
+
+          <div class="progress-circle">
+
+            <svg viewBox="0 0 100 100">
+
+              <circle
+                class="progress-background"
+                cx="50"
+                cy="50"
+                r="42">
+              </circle>
+
+
+              <circle
+                class="progress-value"
+                cx="50"
+                cy="50"
+                r="42"
+                [style.stroke-dashoffset]="264 - (264 * porcentajeCerrados / 100)">
+              </circle>
+
+            </svg>
+
+
+            <strong>
+              {{ porcentajeCerrados }}%
+            </strong>
+
+          </div>
+
+
+          <div class="resolution-info">
+
+            <span>
+              Resolución
+            </span>
+
+            <strong>
+              {{ cerrados }} de {{ cantidadTickets }}
+            </strong>
+
+            <small>
+              tickets completados
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="stat-line resolution-line"></div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FILTROS / CONTROL
+  ====================================================== -->
+
+  <section class="control-panel">
+
+    <div class="control-header">
+
+      <div class="control-title">
+
+        <div class="control-icon">
+          ⌕
+        </div>
+
+        <div>
+
+          <span>
+            PANEL DE CONTROL
+          </span>
+
+          <strong>
+            Buscar y filtrar incidentes
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="control-status">
+
+        <span></span>
+
+        SISTEMA OPERATIVO
+
+      </div>
+
+    </div>
+
+
+    <div class="toolbar">
+
+
+      <!-- BUSCADOR -->
+
+      <div class="search-container">
+
+        <span class="search-icon">
+          ⌕
+        </span>
+
+
+        <div class="search-content">
+
+          <label>
+            BÚSQUEDA INTELIGENTE
+          </label>
+
+          <input
+            type="text"
+            placeholder="Título, descripción, categoría o usuario..."
+            [(ngModel)]="buscar"
+            (input)="aplicarFiltros()"
+          >
+
+        </div>
+
+
+        <span
+          class="search-count"
+          *ngIf="buscar">
+
+          {{ ticketsFiltrados.length }}
+
+        </span>
+
+      </div>
+
+
+
+      <!-- ESTADO -->
+
+      <div class="filter-box">
+
+        <label>
+          ESTADO
+        </label>
+
+        <select
+          [(ngModel)]="filtroEstado"
+          (change)="aplicarFiltros()"
+          title="Filtrar por estado">
+
+          <option value="Todos">
+            Todos los estados
+          </option>
+
+          <option value="Abierto">
+            Abierto
+          </option>
+
+          <option value="En Proceso">
+            En Proceso
+          </option>
+
+          <option value="Cerrado">
+            Cerrado
+          </option>
+
+        </select>
+
+      </div>
+
+
+
+      <!-- PRIORIDAD -->
+
+      <div class="filter-box">
+
+        <label>
+          PRIORIDAD
+        </label>
+
+        <select
+          [(ngModel)]="filtroPrioridad"
+          (change)="aplicarFiltros()"
+          title="Filtrar por prioridad">
+
+          <option value="Todas">
+            Todas las prioridades
+          </option>
+
+          <option value="Alta">
+            Alta
+          </option>
+
+          <option value="Media">
+            Media
+          </option>
+
+          <option value="Baja">
+            Baja
+          </option>
+
+        </select>
+
+      </div>
+
+
+
+      <!-- LIMPIAR -->
+
+      <button
+        class="btn-clear"
+        type="button"
+        (click)="limpiarFiltros()"
+        title="Limpiar filtros">
+
+        <span>
+          ↺
+        </span>
+
+        Limpiar
+
+      </button>
+
+
+
+      <!-- ACTUALIZAR -->
+
+      <button
+        class="btn-refresh"
+        type="button"
+        (click)="cargarTickets()"
+        [disabled]="cargando"
+        title="Actualizar información">
+
+        <span [class.rotating]="cargando">
+          ↻
+        </span>
+
+        Actualizar
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       RESULTADOS
+  ====================================================== -->
+
+  <div class="results-bar">
+
+    <div class="results-info">
+
+      <span class="results-dot"></span>
+
+      <strong>
+        {{ ticketsFiltrados.length }}
+      </strong>
+
+      <span>
+        resultados encontrados
+      </span>
+
+    </div>
+
+
+    <div class="system-status">
+
+      <span>●</span>
+
+      Sistema conectado · Base de datos operativa
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       TABLA
+  ====================================================== -->
+
+  <div class="table-box">
+
+    <div class="table-top-line"></div>
+
+
+    <div class="table-header-info">
+
+      <div class="table-title">
+
+        <div class="table-title-icon">
+          ▦
+        </div>
+
+        <div>
+
+          <strong>
+            Registro de incidentes
+          </strong>
+
+          <span>
+            Información detallada de los tickets
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="table-total">
+
+        <span>
+          ●
+        </span>
+
+        {{ ticketsFiltrados.length }} registros
+
+      </div>
+
+    </div>
+
+
+    <div class="table-scroll">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>
+              TICKET
+            </th>
+
+            <th>
+              CATEGORÍA
+            </th>
+
+            <th>
+              PRIORIDAD
+            </th>
+
+            <th>
+              ESTADO
+            </th>
+
+            <th>
+              USUARIO
+            </th>
+
+            <th>
+              ACCIONES
+            </th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr
+            *ngFor="let ticket of ticketsFiltrados; let i = index"
+            class="ticket-row"
+            [style.animation-delay]="(i * 0.05) + 's'">
+
+
+            <!-- TICKET -->
+
+            <td data-label="Ticket">
+
+              <div class="ticket-main">
+
+                <span class="ticket-number">
+
+                  #{{ i + 1 }}
+
+                </span>
+
+
+                <div class="ticket-info">
+
+                  <h3>
+                    {{ ticket.titulo }}
+                  </h3>
+
+                  <p>
+                    {{ ticket.descripcion }}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </td>
+
+
+
+            <!-- CATEGORÍA -->
+
+            <td data-label="Categoría">
+
+              <span class="categoria">
+
+                <span class="category-icon">
+                  ◈
+                </span>
+
+                {{ ticket.categoria }}
+
+              </span>
+
+            </td>
+
+
+
+            <!-- PRIORIDAD -->
+
+            <td data-label="Prioridad">
+
+              <span
+                class="prioridad"
+                [class.alta]="ticket.prioridad === 'Alta'"
+                [class.media]="ticket.prioridad === 'Media'"
+                [class.baja]="ticket.prioridad === 'Baja'">
+
+                <span class="priority-dot"></span>
+
+                {{ ticket.prioridad }}
+
+              </span>
+
+            </td>
+
+
+
+            <!-- ESTADO -->
+
+            <td data-label="Estado">
+
+              <span
+                class="estado"
+                [class.abierto]="ticket.estado === 'Abierto'"
+                [class.proceso]="ticket.estado === 'En Proceso'"
+                [class.cerrado]="ticket.estado === 'Cerrado'">
+
+                <span class="status-dot"></span>
+
+                {{ ticket.estado }}
+
+              </span>
+
+            </td>
+
+
+
+            <!-- USUARIO -->
+
+            <td data-label="Usuario">
+
+              <div class="usuario">
+
+                <span class="user-avatar">
+
+                  {{ obtenerInicial(ticket.usuario) }}
+
+                </span>
+
+
+                <span class="user-name">
+
+                  {{ ticket.usuario }}
+
+                </span>
+
+              </div>
+
+            </td>
+
+
+
+            <!-- ACCIONES -->
+
+            <td data-label="Acciones">
+
+              <div class="acciones">
+
+                <button
+                  class="btn-estado"
+                  type="button"
+                  title="Cambiar estado"
+                  (click)="cambiarEstado(ticket)">
+
+                  ↻
+
+                </button>
+
+
+                <button
+                  class="btn-eliminar"
+                  type="button"
+                  title="Eliminar ticket"
+                  (click)="eliminarTicket(ticket._id)">
+
+                  🗑
+
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+
+
+          <!-- =================================================
+               SIN DATOS
+          ================================================== -->
+
+          <tr
+            *ngIf="ticketsFiltrados.length === 0">
+
+            <td
+              colspan="6"
+              class="sin-datos">
+
+              <div class="empty-state">
+
+                <div class="empty-orbit">
+
+                  <div class="empty-icon">
+                    ◇
+                  </div>
+
+                </div>
+
+
+                <span class="empty-label">
+                  SIN RESULTADOS
+                </span>
+
+
+                <h3>
+                  No existen tickets
+                </h3>
+
+
+                <p>
+                  No se encontraron incidentes con los filtros actuales.
+                </p>
+
+
+                <button
+                  type="button"
+                  (click)="limpiarFiltros()">
+
+                  Mostrar todos
+
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       LOADING
+  ====================================================== -->
+
+  <div
+    class="loading-overlay"
+    *ngIf="cargando">
+
+    <div class="loader-box">
+
+      <div class="loader-visual">
+
+        <div class="loader-ring ring-a"></div>
+        <div class="loader-ring ring-b"></div>
+
+        <div class="loader-core">
+          ◈
+        </div>
+
+      </div>
+
+
+      <div class="loader-text">
+
+        <span>
+          SISTEMA DE GESTIÓN
+        </span>
+
+        <strong>
+          Actualizando información
+        </strong>
+
+        <small>
+          Consultando tickets del sistema...
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="toast"
+    [class.success]="tipoMensaje === 'success'"
+    [class.error]="tipoMensaje === 'error'"
+    *ngIf="mensaje">
+
+    <div class="toast-icon">
+
+      {{ tipoMensaje === 'success' ? '✓' : '!' }}
+
+    </div>
+
+
+    <div class="toast-content">
+
+      <span>
+        {{ tipoMensaje === 'success' ? 'OPERACIÓN COMPLETADA' : 'ATENCIÓN' }}
+      </span>
+
+      <strong>
+        {{ mensaje }}
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>

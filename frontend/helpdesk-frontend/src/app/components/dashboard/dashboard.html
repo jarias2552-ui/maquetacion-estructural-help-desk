@@ -1,0 +1,536 @@
+<section class="dashboard">
+
+    <!-- ==========================================
+         FONDO DECORATIVO TECNOLÓGICO
+    =========================================== -->
+
+    <div class="tech-background">
+        <span class="tech-orb orb-1"></span>
+        <span class="tech-orb orb-2"></span>
+        <span class="tech-orb orb-3"></span>
+
+        <span class="tech-line line-1"></span>
+        <span class="tech-line line-2"></span>
+        <span class="tech-line line-3"></span>
+    </div>
+
+
+    <!-- ==========================================
+         HEADER PRINCIPAL
+    =========================================== -->
+
+    <div class="dashboard-header">
+
+        <div class="welcome">
+
+            <div class="ai-badge">
+                <span class="badge-pulse"></span>
+                🤖 SISTEMA INTELIGENTE · HELP DESK
+            </div>
+
+
+            <div class="title-wrapper">
+
+                <span class="title-black">
+                    Panel de
+                </span>
+
+                <span class="title-blue">
+                    Control
+                </span>
+
+                <span class="title-glow"></span>
+
+            </div>
+
+
+            <div class="title-line"></div>
+
+
+            <p>
+                Gestión inteligente de incidentes y soporte técnico
+                <span class="typing-dot">●</span>
+                <span class="typing-dot delay-1">●</span>
+                <span class="typing-dot delay-2">●</span>
+            </p>
+
+        </div>
+
+
+        <button
+            class="refresh-btn"
+            (click)="refrescarDashboard()">
+
+            <span class="refresh-icon">↻</span>
+
+            <span>
+                Actualizar
+            </span>
+
+            <span class="button-shine"></span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         ESTADO DEL SISTEMA
+    =========================================== -->
+
+    <div class="system-status">
+
+        <div class="status-icon">
+
+            <div class="status-light"></div>
+
+        </div>
+
+
+        <div class="status-content">
+
+            <strong>
+                Sistema operativo
+            </strong>
+
+            <span>
+                API conectada correctamente
+            </span>
+
+        </div>
+
+
+        <div class="status-scan"></div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         TARJETAS ESTADÍSTICAS
+    =========================================== -->
+
+    <div class="cards">
+
+
+        <!-- TOTAL -->
+
+        <div class="card total">
+
+            <div class="card-grid"></div>
+
+            <div class="card-icon">
+                🎫
+            </div>
+
+
+            <div class="card-content">
+
+                <span>
+                    Total Tickets
+                </span>
+
+                <h2>
+                    {{totalTickets}}
+                </h2>
+
+                <small>
+                    Incidentes registrados
+                </small>
+
+            </div>
+
+
+            <div class="card-glow"></div>
+
+        </div>
+
+
+
+        <!-- ABIERTOS -->
+
+        <div class="card abierto">
+
+            <div class="card-grid"></div>
+
+            <div class="card-icon">
+                🟢
+            </div>
+
+
+            <div class="card-content">
+
+                <span>
+                    Abiertos
+                </span>
+
+                <h2>
+                    {{abiertos}}
+                </h2>
+
+                <small>
+                    Pendientes de atención
+                </small>
+
+            </div>
+
+
+            <div class="card-glow"></div>
+
+        </div>
+
+
+
+        <!-- EN PROCESO -->
+
+        <div class="card proceso">
+
+            <div class="card-grid"></div>
+
+            <div class="card-icon">
+                ⚙️
+            </div>
+
+
+            <div class="card-content">
+
+                <span>
+                    En proceso
+                </span>
+
+                <h2>
+                    {{proceso}}
+                </h2>
+
+                <small>
+                    Actualmente atendidos
+                </small>
+
+            </div>
+
+
+            <div class="card-glow"></div>
+
+        </div>
+
+
+
+        <!-- CERRADOS -->
+
+        <div class="card cerrado">
+
+            <div class="card-grid"></div>
+
+            <div class="card-icon">
+                ✔️
+            </div>
+
+
+            <div class="card-content">
+
+                <span>
+                    Cerrados
+                </span>
+
+                <h2>
+                    {{cerrados}}
+                </h2>
+
+                <small>
+                    Soluciones completadas
+                </small>
+
+            </div>
+
+
+            <div class="card-glow"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         PANEL IA
+    =========================================== -->
+
+    <div class="ai-panel">
+
+        <div class="ai-grid"></div>
+
+
+        <div class="ai-logo">
+
+            <div class="ai-ring ring-one"></div>
+            <div class="ai-ring ring-two"></div>
+
+            <span>
+                🤖
+            </span>
+
+        </div>
+
+
+        <div class="ai-content">
+
+            <div class="ai-label">
+                <span></span>
+                INTELLIGENCE ENGINE
+            </div>
+
+            <h3>
+                AI <strong>Insights</strong>
+            </h3>
+
+            <p>
+                El sistema analiza automáticamente los incidentes registrados
+                para mejorar la atención y gestión del soporte técnico.
+            </p>
+
+        </div>
+
+
+        <div class="ai-status">
+            <span class="ai-status-dot"></span>
+            ACTIVO
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         TABLA DE TICKETS
+    =========================================== -->
+
+    <div class="table-box">
+
+        <div class="table-decoration"></div>
+
+
+        <!-- HEADER TABLA -->
+
+        <div class="table-header">
+
+            <div class="table-title">
+
+                <div class="section-icon">
+                    📋
+                </div>
+
+
+                <div>
+
+                    <div class="section-label">
+                        TICKET MANAGEMENT
+                    </div>
+
+                    <h2>
+                        Últimos
+                        <span>Incidentes</span>
+                    </h2>
+
+                    <p>
+                        Consulta y administra los tickets registrados.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUSCADOR -->
+
+            <div class="search-area">
+
+                <div class="search-icon">
+                    🔍
+                </div>
+
+
+                <input
+                    type="text"
+                    placeholder="Buscar incidente..."
+                    (input)="buscarTicket($event)"
+                >
+
+
+                <div class="search-line"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TABLA -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            <span>TÍTULO</span>
+                        </th>
+
+                        <th>
+                            <span>CATEGORÍA</span>
+                        </th>
+
+                        <th>
+                            <span>PRIORIDAD</span>
+                        </th>
+
+                        <th>
+                            <span>ESTADO</span>
+                        </th>
+
+                        <th>
+                            <span>USUARIO</span>
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr
+                        *ngFor="let ticket of ticketsFiltrados"
+                        class="ticket-row"
+                    >
+
+                        <td class="titulo">
+
+                            <div class="ticket-title">
+
+                                <span class="ticket-indicator"></span>
+
+                                {{ticket.titulo}}
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="category-text">
+
+                                {{ticket.categoria || 'Sin categoría'}}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span
+                                class="badge prioridad"
+                                [ngClass]="obtenerClasePrioridad(ticket.prioridad)"
+                            >
+
+                                {{ticket.prioridad}}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span
+                                class="badge estado"
+                                [ngClass]="obtenerClaseEstado(ticket.estado)"
+                            >
+
+                                <span class="state-dot"></span>
+
+                                {{ticket.estado}}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="user-cell">
+
+                                <span class="user-avatar">
+                                    👤
+                                </span>
+
+                                <span>
+                                    {{ticket.usuario || 'Sin usuario'}}
+                                </span>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        *ngIf="ticketsFiltrados.length===0"
+                    >
+
+                        <td
+                            colspan="5"
+                            class="empty"
+                        >
+
+                            <div class="empty-icon">
+                                📭
+                            </div>
+
+                            <strong>
+                                No existen tickets registrados
+                            </strong>
+
+                            <span>
+                                Los nuevos incidentes aparecerán aquí.
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         FOOTER DECORATIVO
+    =========================================== -->
+
+    <div class="dashboard-footer">
+
+        <span class="footer-line"></span>
+
+        <span>
+            HELP DESK · CONTROL CENTER
+        </span>
+
+        <span class="footer-line"></span>
+
+    </div>
+
+
+</section>
