@@ -5078,3 +5078,259 @@ select:focus-visible {
     }
 
 }
+
+/* =========================================================
+   AJUSTE MÓVIL FINAL
+   SOLO RESPONSIVE - NO AFECTA PC
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* CONTENEDOR PRINCIPAL */
+    .tickets-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .hero-header {
+        width: 100%;
+    }
+
+    .hero-left {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-content {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .hero-title {
+        max-width: 100%;
+    }
+
+    .title-black,
+    .title-tech {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* ESTADÍSTICAS */
+    .stats-section {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .stats-grid {
+        width: 100%;
+    }
+
+    .stat-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* PANEL DE CONTROL */
+    .control-panel {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .control-header {
+        width: 100%;
+    }
+
+    .control-title {
+        min-width: 0;
+    }
+
+    .control-title > div {
+        min-width: 0;
+    }
+
+    /* BARRA DE HERRAMIENTAS */
+    .toolbar {
+        width: 100%;
+    }
+
+    .search-container,
+    .filter-box,
+    .btn-clear,
+    .btn-refresh {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* RESULTADOS */
+    .results-bar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* TABLA */
+    .table-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .table-header-info {
+        width: 100%;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .table-title {
+        min-width: 0;
+    }
+
+    .table-title > div {
+        min-width: 0;
+    }
+
+    .table-header-info strong,
+    .table-header-info span {
+        overflow-wrap: anywhere;
+    }
+
+    .table-total {
+        flex-shrink: 0;
+    }
+
+    /* TARJETAS DE TICKETS */
+    .table-scroll {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    table {
+        width: 100%;
+        min-width: 0;
+    }
+
+    tbody {
+        width: 100%;
+    }
+
+    tr.ticket-row {
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
+        margin: 12px;
+        overflow: hidden;
+    }
+
+    tr.ticket-row td {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* INFORMACIÓN DEL TICKET */
+    .ticket-main {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .ticket-info {
+        min-width: 0;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .ticket-main h3,
+    .ticket-main p {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* EVITA QUE LOS BADGES SE SALGAN */
+    .categoria,
+    .prioridad,
+    .estado {
+        max-width: 65%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* USUARIO */
+    .usuario {
+        max-width: 65%;
+        min-width: 0;
+    }
+
+    .user-name {
+        max-width: 130px;
+    }
+
+    /* ACCIONES */
+    .acciones {
+        flex-shrink: 0;
+    }
+
+    /* LOADING */
+    .loader-box {
+        max-width: calc(100vw - 30px);
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-left {
+        gap: 10px;
+    }
+
+    .hero-content {
+        min-width: 0;
+    }
+
+    .title-black {
+        font-size: 23px;
+    }
+
+    .title-tech {
+        font-size: 32px;
+    }
+
+    .counter-card {
+        width: 100%;
+    }
+
+    .table-header-info {
+        padding: 13px;
+    }
+
+    .table-total {
+        padding: 7px 8px;
+        font-size: 8px;
+    }
+
+    tr.ticket-row {
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+        margin: 8px;
+        padding: 12px;
+    }
+
+    .categoria,
+    .prioridad,
+    .estado {
+        max-width: 60%;
+    }
+
+    .user-name {
+        max-width: 105px;
+    }
+
+}

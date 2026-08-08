@@ -1627,126 +1627,52 @@
 
 }
 
-
 /* =========================================================
    RESPONSIVE
+   HELPDESK - DISEÑO ADAPTATIVO
 ========================================================= */
 
-@media(max-width:1000px) {
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
 
     .system-indicator {
-
         display: none;
-
     }
 
 }
 
 
-@media(max-width:800px) {
+/* =========================================================
+   TABLETS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 800px) {
 
     .navbar {
 
-        height: 78px;
+        height: 76px;
 
-        padding:
-            0 20px;
-
-    }
-
-
-    .logo-text {
-
-        min-width: auto;
+        padding: 0 18px;
 
     }
 
 
-    .logo-text p {
+    .logo-container {
 
-        display: none;
-
-    }
-
-
-    .brand-line {
-
-        margin-top: 7px;
+        gap: 11px;
 
     }
 
 
     .logo-icon {
 
-        width: 50px;
+        width: 46px;
 
-        height: 50px;
-
-    }
-
-
-    .logo-text h2 {
-
-        font-size: 23px;
-
-    }
-
-
-    .user-data,
-    .arrow {
-
-        display: none;
-
-    }
-
-
-    .actions {
-
-        gap: 10px;
-
-    }
-
-
-    .action-divider {
-
-        display: none;
-
-    }
-
-
-    .notifications {
-
-        right: -80px;
-
-        width: 330px;
-
-    }
-
-
-    .dropdown {
-
-        right: 20px;
-
-    }
-
-}
-
-
-@media(max-width:500px) {
-
-    .navbar {
-
-        padding:
-            0 14px;
-
-    }
-
-
-    .logo-icon {
-
-        width: 45px;
-
-        height: 45px;
+        height: 46px;
 
         border-radius: 14px;
 
@@ -1760,18 +1686,54 @@
     }
 
 
-    .logo-text h2 {
+    .logo-text {
 
-        font-size: 20px;
+        min-width: 0;
 
     }
 
 
-    .notification {
+    .logo-text h2 {
 
-        width: 43px;
+        font-size: 21px;
 
-        height: 43px;
+        white-space: nowrap;
+
+    }
+
+
+    .logo-text p {
+
+        display: none;
+
+    }
+
+
+    .brand-line {
+
+        margin-top: 6px;
+
+    }
+
+
+    .actions {
+
+        gap: 8px;
+
+    }
+
+
+    .action-divider {
+
+        display: none;
+
+    }
+
+
+    .user-data,
+    .arrow {
+
+        display: none;
 
     }
 
@@ -1779,18 +1741,226 @@
     .avatar-container,
     .avatar {
 
-        width: 40px;
+        width: 42px;
 
-        height: 40px;
+        height: 42px;
 
     }
 
 
     .notifications {
 
+        top: 62px;
+
+        right: 0;
+
+        width: min(350px, calc(100vw - 30px));
+
+        max-height: calc(100vh - 90px);
+
+    }
+
+
+    .dropdown {
+
+        top: 68px;
+
+        right: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        width: 100%;
+
+        height: 70px;
+
+        padding: 0 12px;
+
+        gap: 8px;
+
+    }
+
+
+    /* -----------------------------------------------
+       LOGO
+    ------------------------------------------------ */
+
+    .logo-container {
+
+        flex: 1;
+
+        min-width: 0;
+
+        gap: 9px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .logo-icon span {
+
+        font-size: 20px;
+
+    }
+
+
+    .logo-ring {
+
+        inset: -3px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .logo-text {
+
+        min-width: 0;
+
+        overflow: hidden;
+
+    }
+
+
+    .logo-text h2 {
+
+        font-size: 19px;
+
+        line-height: 1;
+
+        white-space: nowrap;
+
+    }
+
+
+    .brand-line {
+
+        width: 45px;
+
+        height: 2px;
+
+        margin-top: 5px;
+
+    }
+
+
+    /* -----------------------------------------------
+       ACCIONES
+    ------------------------------------------------ */
+
+    .actions {
+
+        flex-shrink: 0;
+
+        gap: 7px;
+
+        margin-left: 0;
+
+    }
+
+
+    /* -----------------------------------------------
+       NOTIFICACIÓN
+    ------------------------------------------------ */
+
+    .notification {
+
+        width: 40px;
+
+        height: 40px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .bell {
+
+        font-size: 18px;
+
+    }
+
+
+    .counter {
+
+        width: 18px;
+
+        height: 18px;
+
+        top: -4px;
+
+        right: -4px;
+
+        font-size: 9px;
+
+    }
+
+
+    /* -----------------------------------------------
+       AVATAR
+    ------------------------------------------------ */
+
+    .avatar-container,
+    .avatar {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .avatar {
+
+        font-size: 15px;
+
+    }
+
+
+    .avatar-status {
+
+        width: 9px;
+
+        height: 9px;
+
+        right: 0;
+
+        bottom: 0;
+
+    }
+
+
+    /* -----------------------------------------------
+       NOTIFICACIONES
+    ------------------------------------------------ */
+
+    .notifications {
+
         position: fixed;
 
-        top: 72px;
+        top: 70px;
 
         left: 10px;
 
@@ -1798,16 +1968,170 @@
 
         width: auto;
 
+        max-width: none;
+
+        max-height: calc(100vh - 85px);
+
+        padding: 16px;
+
+        border-radius: 18px;
+
+        overflow-y: auto;
+
     }
 
 
+    .notification-header {
+
+        gap: 10px;
+
+    }
+
+
+    .notification-title {
+
+        font-size: 15px;
+
+    }
+
+
+    .notification-header small {
+
+        font-size: 10px;
+
+    }
+
+
+    .notice {
+
+        padding: 11px;
+
+        gap: 9px;
+
+    }
+
+
+    .notice-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .notice strong {
+
+        font-size: 11px;
+
+    }
+
+
+    .notice small {
+
+        font-size: 9px;
+
+    }
+
+
+    /* -----------------------------------------------
+       MENÚ USUARIO
+    ------------------------------------------------ */
+
     .dropdown {
+
+        position: fixed;
+
+        top: 65px;
 
         right: 10px;
 
-        top: 68px;
+        width: calc(100vw - 20px);
 
-        width: 250px;
+        max-width: 280px;
+
+        padding: 10px;
+
+        border-radius: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+
+        padding: 0 9px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+
+    }
+
+
+    .logo-icon span {
+
+        font-size: 18px;
+
+    }
+
+
+    .logo-text h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .actions {
+
+        gap: 5px;
+
+    }
+
+
+    .notification {
+
+        width: 36px;
+
+        height: 36px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .avatar-container,
+    .avatar {
+
+        width: 35px;
+
+        height: 35px;
+
+    }
+
+
+    .bell {
+
+        font-size: 16px;
 
     }
 

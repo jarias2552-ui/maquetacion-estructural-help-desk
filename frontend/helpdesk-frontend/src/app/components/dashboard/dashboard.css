@@ -2468,3 +2468,967 @@ td {
     }
 
 }
+
+/* =========================================================
+   📱 RESPONSIVE MÓVIL — DASHBOARD
+   SOLO AFECTA TELÉFONOS
+   NO MODIFICA EL DISEÑO DE PC
+========================================================= */
+
+@media (max-width: 550px) {
+
+    /* =====================================================
+       CONTENEDOR PRINCIPAL
+    ===================================================== */
+
+    .dashboard {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 18px 12px 25px;
+
+        overflow-x: hidden;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .dashboard-header {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 18px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .welcome {
+
+        width: 100%;
+
+    }
+
+
+    /* =====================================================
+       BADGE
+    ===================================================== */
+
+    .ai-badge {
+
+        display: flex;
+
+        width: fit-content;
+
+        max-width: 100%;
+
+        padding: 8px 12px;
+
+        font-size: 9px;
+
+        letter-spacing: .7px;
+
+        line-height: 1.3;
+
+        white-space: normal;
+
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+
+    .title-wrapper {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        line-height: .95;
+
+    }
+
+
+    .title-black,
+    .title-blue {
+
+        display: block;
+
+        font-size: clamp(30px, 10vw, 38px);
+
+        letter-spacing: -1.5px;
+
+        line-height: 1;
+
+    }
+
+
+    .title-line {
+
+        width: 150px;
+
+        max-width: 70%;
+
+        height: 2px;
+
+        margin-top: 10px;
+
+    }
+
+
+    .welcome p {
+
+        max-width: 100%;
+
+        margin-top: 9px;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* =====================================================
+       BOTÓN ACTUALIZAR
+    ===================================================== */
+
+    .refresh-btn {
+
+        width: 100%;
+
+        min-height: 48px;
+
+        justify-content: center;
+
+        padding: 12px 18px;
+
+        border-radius: 14px;
+
+        font-size: 13px;
+
+    }
+
+
+    .refresh-icon {
+
+        font-size: 19px;
+
+    }
+
+
+    /* =====================================================
+       ESTADO DEL SISTEMA
+    ===================================================== */
+
+    .system-status {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-bottom: 20px;
+
+        padding: 12px 14px;
+
+        gap: 10px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .status-icon {
+
+        width: 32px;
+
+        height: 32px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .status-content {
+
+        min-width: 0;
+
+    }
+
+
+    .status-content strong {
+
+        font-size: 11px;
+
+    }
+
+
+    .status-content span {
+
+        display: block;
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+    }
+
+
+    .status-scan {
+
+        margin-left: auto;
+
+        flex-shrink: 0;
+
+        height: 22px;
+
+    }
+
+
+    /* =====================================================
+       TARJETAS ESTADÍSTICAS
+    ===================================================== */
+
+    .cards {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .card {
+
+        min-width: 0;
+
+        min-height: 125px;
+
+        padding: 14px 12px;
+
+        border-radius: 17px;
+
+        gap: 10px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+    }
+
+
+    .card-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+        flex-shrink: 0;
+
+        border-radius: 12px;
+
+        font-size: 19px;
+
+    }
+
+
+    .card-content {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .card span {
+
+        display: block;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+
+    .card h2 {
+
+        font-size: 27px;
+
+        margin: 4px 0;
+
+    }
+
+
+    .card small {
+
+        display: block;
+
+        font-size: 9px;
+
+        line-height: 1.3;
+
+        white-space: normal;
+
+    }
+
+
+    .card-glow {
+
+        width: 80px;
+
+        height: 80px;
+
+        right: -35px;
+
+        top: -35px;
+
+    }
+
+
+    .card-grid {
+
+        background-size: 18px 18px;
+
+    }
+
+
+    /* =====================================================
+       PANEL IA
+    ===================================================== */
+
+    .ai-panel {
+
+        width: 100%;
+
+        margin-bottom: 20px;
+
+        padding: 17px 15px;
+
+        gap: 12px;
+
+        border-radius: 18px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .ai-logo {
+
+        width: 46px;
+
+        height: 46px;
+
+        flex-shrink: 0;
+
+        border-radius: 14px;
+
+        font-size: 22px;
+
+    }
+
+
+    .ai-ring {
+
+        inset: -5px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .ring-two {
+
+        inset: -9px;
+
+    }
+
+
+    .ai-content {
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+
+    .ai-label {
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .ai-label span {
+
+        width: 5px;
+
+        height: 5px;
+
+    }
+
+
+    .ai-panel h3 {
+
+        font-size: 18px;
+
+        margin-top: 3px;
+
+    }
+
+
+    .ai-panel p {
+
+        margin-top: 4px;
+
+        font-size: 10px;
+
+        line-height: 1.45;
+
+    }
+
+
+    .ai-status {
+
+        display: none;
+
+    }
+
+
+    /* =====================================================
+       PANEL DE TABLA
+    ===================================================== */
+
+    .table-box {
+
+        width: 100%;
+
+        padding: 16px 12px;
+
+        margin: 0;
+
+        border-radius: 18px;
+
+    }
+
+
+    /* =====================================================
+       HEADER DE TABLA
+    ===================================================== */
+
+    .table-header {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .table-title {
+
+        width: 100%;
+
+        gap: 10px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .section-icon {
+
+        width: 39px;
+
+        height: 39px;
+
+        flex-shrink: 0;
+
+        border-radius: 11px;
+
+        font-size: 18px;
+
+    }
+
+
+    .section-label {
+
+        font-size: 7px;
+
+        letter-spacing: 1.2px;
+
+        margin-bottom: 3px;
+
+    }
+
+
+    .table-header h2 {
+
+        font-size: 19px;
+
+        line-height: 1.15;
+
+    }
+
+
+    .table-header p {
+
+        margin-top: 4px;
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* =====================================================
+       BUSCADOR
+    ===================================================== */
+
+    .search-area {
+
+        width: 100%;
+
+    }
+
+
+    .search-area input {
+
+        width: 100%;
+
+        height: 44px;
+
+        padding: 12px 14px 12px 40px;
+
+        border-radius: 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    .search-icon {
+
+        left: 14px;
+
+        font-size: 13px;
+
+    }
+
+
+    /* =====================================================
+       TABLA
+       SE MANTIENE COMPLETA Y SE DESPLAZA HORIZONTALMENTE
+       EN VEZ DE ROMPER EL DISEÑO
+    ===================================================== */
+
+    .table-container {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: thin;
+
+    }
+
+
+    table {
+
+        width: 700px;
+
+        min-width: 700px;
+
+    }
+
+
+    th {
+
+        padding: 13px 12px;
+
+        font-size: 9px;
+
+    }
+
+
+    td {
+
+        padding: 13px 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    .ticket-row:hover {
+
+        transform: none;
+
+    }
+
+
+    .ticket-title {
+
+        gap: 7px;
+
+    }
+
+
+    .ticket-indicator {
+
+        width: 4px;
+
+        height: 21px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .titulo {
+
+        max-width: 220px;
+
+    }
+
+
+    .category-text {
+
+        font-size: 10px;
+
+    }
+
+
+    .badge {
+
+        padding: 6px 10px;
+
+        font-size: 8px;
+
+    }
+
+
+    .state-dot {
+
+        width: 4px;
+
+        height: 4px;
+
+    }
+
+
+    .user-cell {
+
+        gap: 6px;
+
+    }
+
+
+    .user-avatar {
+
+        width: 25px;
+
+        height: 25px;
+
+        border-radius: 8px;
+
+        font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       MENSAJE SIN TICKETS
+    ===================================================== */
+
+    .empty {
+
+        padding: 45px 15px !important;
+
+    }
+
+
+    .empty-icon {
+
+        font-size: 34px;
+
+    }
+
+
+    .empty strong {
+
+        font-size: 13px;
+
+    }
+
+
+    .empty span {
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .dashboard-footer {
+
+        width: 100%;
+
+        gap: 8px;
+
+        margin-top: 22px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+
+        text-align: center;
+
+    }
+
+
+    .footer-line {
+
+        width: 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   📱 TELÉFONOS MUY PEQUEÑOS
+   320px — 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .dashboard {
+
+        padding: 15px 9px 22px;
+
+    }
+
+
+    .ai-badge {
+
+        font-size: 8px;
+
+        padding: 7px 10px;
+
+    }
+
+
+    .title-black,
+    .title-blue {
+
+        font-size: 29px;
+
+    }
+
+
+    .welcome p {
+
+        font-size: 11px;
+
+    }
+
+
+    .cards {
+
+        gap: 8px;
+
+    }
+
+
+    .card {
+
+        min-height: 118px;
+
+        padding: 12px 10px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .card-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 17px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .card h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .card span {
+
+        font-size: 9px;
+
+    }
+
+
+    .card small {
+
+        font-size: 8px;
+
+    }
+
+
+    .ai-panel {
+
+        padding: 14px 12px;
+
+    }
+
+
+    .ai-logo {
+
+        width: 41px;
+
+        height: 41px;
+
+        font-size: 19px;
+
+    }
+
+
+    .ai-panel h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .ai-panel p {
+
+        font-size: 9px;
+
+    }
+
+
+    .table-box {
+
+        padding: 14px 9px;
+
+    }
+
+
+    .table-header h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .table-header p {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   📱 EVITAR DESBORDAMIENTO HORIZONTAL
+========================================================= */
+
+@media (max-width: 550px) {
+
+    html,
+    body {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+    }
+
+
+    .dashboard,
+    .dashboard * {
+
+        max-width: 100%;
+
+    }
+
+
+    .table-container table {
+
+        max-width: none;
+
+    }
+
+}
