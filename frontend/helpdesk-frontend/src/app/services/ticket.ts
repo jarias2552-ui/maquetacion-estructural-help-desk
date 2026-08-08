@@ -18,7 +18,9 @@ export class TicketService {
 
 
   private readonly API_URL =
-  'http://localhost:3000/api/tickets';
+  'https://maquetacion-estructural-help-desk.onrender.com/api/tickets';
+  
+
 
 
 
